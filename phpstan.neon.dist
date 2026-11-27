@@ -1,0 +1,14 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    level: 8
+    paths:
+        - src
+        - config
+    tmpDir: build/phpstan
+    ignoreErrors:
+        # config/ is analysed outside the host app, where env() in config files is correct.
+        -
+            identifier: larastan.noEnvCallsOutsideOfConfig
+            path: config/*

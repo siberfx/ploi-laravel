@@ -1,0 +1,66 @@
+{
+    "name": "siberfx/ploi-laravel",
+    "description": "The Ploi.io PHP SDK, made for Laravel: config-driven multi-account clients, Laravel's HTTP client (fakes, retries, timeouts), collections, typed exceptions and Artisan commands.",
+    "keywords": ["laravel", "ploi", "ploi.io", "sdk", "deployment", "servers", "devops"],
+    "homepage": "https://github.com/siberfx/ploi-laravel",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Selim Görmüş",
+            "email": "info@siberfx.com",
+            "homepage": "https://siberfx.com",
+            "role": "Software Engineer"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "illuminate/cache": "^12.0|^13.0",
+        "illuminate/console": "^12.0|^13.0",
+        "illuminate/contracts": "^12.0|^13.0",
+        "illuminate/http": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0",
+        "ploi/ploi-php-sdk": "^2.2"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.20",
+        "orchestra/testbench": "^10.0|^11.0",
+        "pestphp/pest": "^3.0|^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Siberfx\\PloiLaravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Siberfx\\PloiLaravel\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "analyse": "phpstan analyse --memory-limit=1G",
+        "format": "pint",
+        "lint": "pint --test",
+        "ci": ["@lint", "@analyse", "@test"]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Siberfx\\PloiLaravel\\PloiServiceProvider"
+            ],
+            "aliases": {
+                "Ploi": "Siberfx\\PloiLaravel\\Facades\\Ploi"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
