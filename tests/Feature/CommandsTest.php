@@ -85,13 +85,23 @@ it('deploys a staging site to production', function () {
     Ploi::assertSent(fn (Request $request) => $request->url() === 'https://ploi.io/api/servers/7/sites/3/deploy-to-production');
 });
 
-it('asks before deploying from a production app', function () {
+it('refuses to deploy from a production app without --force when it cannot ask', function () {
     $this->app['env'] = 'production';
     Ploi::fake();
 
-    $this->artisan('ploi:deploy', ['server' => 7, 'site' => 3])
-        ->expectsConfirmation('Are you sure you want to run this command?', 'no')
+    $this->artisan('ploi:deploy', ['server' => 7, 'site' => 3, '--no-interaction' => true])
+        ->expectsOutputToContain('Pass --force to deploy without confirmation.')
         ->assertFailed();
 
     Ploi::assertNothingSent();
+});
+
+it('deploys from a production app with --force', function () {
+    $this->app['env'] = 'production';
+    Ploi::fake();
+
+    $this->artisan('ploi:deploy', ['server' => 7, 'site' => 3, '--force' => true])
+        ->assertSuccessful();
+
+    Ploi::assertSent(fn (Request $request) => $request->url() === 'https://ploi.io/api/servers/7/sites/3/deploy');
 });

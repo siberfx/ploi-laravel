@@ -221,7 +221,7 @@ php artisan ploi:deploy 123 456             # deploy site 456 on server 123
 php artisan ploi:deploy 123 456 --to-production   # deploy a staging site to production
 ```
 
-Every command accepts `--connection=agency`. `ploi:deploy` asks for confirmation when your app runs in production; pass `--force` to skip it (for example in CI).
+Every command accepts `--connection=agency`. When your app runs in production, `ploi:deploy` asks before deploying. Without a terminal to ask in (CI, cron, `--no-interaction`) it refuses unless you pass `--force`.
 
 ## Testing your code
 

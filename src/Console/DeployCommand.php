@@ -4,13 +4,10 @@ declare(strict_types=1);
 
 namespace Siberfx\PloiLaravel\Console;
 
-use Illuminate\Console\ConfirmableTrait;
 use Siberfx\PloiLaravel\PloiClient;
 
 class DeployCommand extends PloiCommand
 {
-    use ConfirmableTrait;
-
     protected $signature = 'ploi:deploy
         {server : The Ploi server ID (see ploi:servers)}
         {site : The Ploi site ID (see ploi:sites)}
@@ -25,7 +22,7 @@ class DeployCommand extends PloiCommand
         $server = $this->intArgument('server');
         $site = $this->intArgument('site');
 
-        if (! $this->confirmToProceed()) {
+        if (! $this->confirmedForProduction($server, $site)) {
             return self::FAILURE;
         }
 
@@ -41,5 +38,30 @@ class DeployCommand extends PloiCommand
         ));
 
         return self::SUCCESS;
+    }
+
+    /**
+     * From an app running in production, ask first unless --force is given.
+     * Without a terminal to ask in (CI, cron) it refuses rather than guessing.
+     */
+    private function confirmedForProduction(int $server, int $site): bool
+    {
+        if ($this->option('force') || ! $this->laravel->environment('production')) {
+            return true;
+        }
+
+        if (! $this->input->isInteractive()) {
+            $this->components->error('This app runs in production. Pass --force to deploy without confirmation.');
+
+            return false;
+        }
+
+        if ($this->components->confirm("Deploy site {$site} on server {$server}?")) {
+            return true;
+        }
+
+        $this->components->warn('Deployment cancelled.');
+
+        return false;
     }
 }
