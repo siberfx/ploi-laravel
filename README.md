@@ -1,7 +1,7 @@
 # Ploi for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/siberfx/ploi-laravel.svg?style=flat-square)](https://packagist.org/packages/siberfx/ploi-laravel)
-[![Total Downloads](https://img.shields.io/packagist/dt/siberfx/ploi-laravel.svg?style=flat-square)](https://packagist.org/packages/siberfx/ploi-laravel)
+[![Total Downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fpackagist.org%2Fpackages%2Fsiberfx%2Fploi-laravel%2Fstats.json&query=%24.downloads.total&label=downloads&color=blue&style=flat-square&cacheSeconds=3600)](https://packagist.org/packages/siberfx/ploi-laravel)
 [![Tests](https://img.shields.io/github/actions/workflow/status/siberfx/ploi-laravel/tests.yml?branch=main&label=tests&style=flat-square&logo=github)](https://github.com/siberfx/ploi-laravel/actions/workflows/tests.yml)
 [![Code Quality](https://img.shields.io/github/actions/workflow/status/siberfx/ploi-laravel/code-quality.yml?branch=main&label=code%20quality&style=flat-square&logo=github)](https://github.com/siberfx/ploi-laravel/actions/workflows/code-quality.yml)
 [![PHPStan](https://img.shields.io/badge/PHPStan-level%208-brightgreen.svg?style=flat-square&logo=php&logoColor=white)](https://github.com/siberfx/ploi-laravel/actions/workflows/code-quality.yml)
