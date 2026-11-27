@@ -2,12 +2,12 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/siberfx/ploi-laravel.svg?style=flat-square)](https://packagist.org/packages/siberfx/ploi-laravel)
 [![Total Downloads](https://img.shields.io/packagist/dt/siberfx/ploi-laravel.svg?style=flat-square)](https://packagist.org/packages/siberfx/ploi-laravel)
-[![Tests](https://img.shields.io/github/actions/workflow/status/siberfx/ploi-laravel/tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/siberfx/ploi-laravel/actions/workflows/tests.yml)
-[![Code Quality](https://img.shields.io/github/actions/workflow/status/siberfx/ploi-laravel/code-quality.yml?branch=main&label=code%20quality&style=flat-square)](https://github.com/siberfx/ploi-laravel/actions/workflows/code-quality.yml)
-[![PHPStan](https://img.shields.io/badge/PHPStan-level%208-brightgreen.svg?style=flat-square)](phpstan.neon.dist)
+[![Tests](https://img.shields.io/github/actions/workflow/status/siberfx/ploi-laravel/tests.yml?branch=main&label=tests&style=flat-square&logo=github)](https://github.com/siberfx/ploi-laravel/actions/workflows/tests.yml)
+[![Code Quality](https://img.shields.io/github/actions/workflow/status/siberfx/ploi-laravel/code-quality.yml?branch=main&label=code%20quality&style=flat-square&logo=github)](https://github.com/siberfx/ploi-laravel/actions/workflows/code-quality.yml)
+[![PHPStan](https://img.shields.io/badge/PHPStan-level%208-brightgreen.svg?style=flat-square&logo=php&logoColor=white)](https://github.com/siberfx/ploi-laravel/actions/workflows/code-quality.yml)
 [![PHP Version](https://img.shields.io/packagist/dependency-v/siberfx/ploi-laravel/php?style=flat-square)](https://packagist.org/packages/siberfx/ploi-laravel)
 [![Laravel](https://img.shields.io/badge/Laravel-12.x%20%7C%2013.x-FF2D20.svg?style=flat-square&logo=laravel&logoColor=white)](https://laravel.com)
-[![License](https://img.shields.io/github/license/siberfx/ploi-laravel.svg?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/github/license/siberfx/ploi-laravel.svg?style=flat-square)](https://github.com/siberfx/ploi-laravel/blob/main/LICENSE)
 
 The official [Ploi PHP SDK](https://github.com/ploi/ploi-php-sdk), made for Laravel.
 
@@ -268,7 +268,7 @@ composer ci        # all of the above
 
 ## Changelog
 
-See [CHANGELOG.md](CHANGELOG.md).
+See [CHANGELOG.md](https://github.com/siberfx/ploi-laravel/blob/main/CHANGELOG.md).
 
 ## Credits
 
@@ -277,4 +277,4 @@ See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT. See [LICENSE](https://github.com/siberfx/ploi-laravel/blob/main/LICENSE).

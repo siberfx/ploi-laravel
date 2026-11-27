@@ -3,6 +3,11 @@
 All notable changes to `siberfx/ploi-laravel` are documented here.
 This project follows [Semantic Versioning](https://semver.org).
 
+## 1.0.1 - 2026-11-28
+
+- `ploi:deploy` refuses to deploy to production without a terminal and asks for `--force`, instead of waiting on a confirmation prompt that never arrives.
+- README badges and links use absolute URLs, so they work on Packagist too. The PHPStan badge links to the code-quality workflow, because `phpstan.neon.dist` is not in the dist archive.
+
 ## 1.0.0 - 2026-11-27
 
 First release.
